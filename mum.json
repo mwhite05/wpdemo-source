@@ -7,6 +7,10 @@
                 "excludes": [
                     "mum-scripts"
                 ]
+            },
+            {
+                "source": "./etc/apache2/sites-available/",
+                "installTo": "/etc/apache2/sites-available/"
             }
         ],
         "scripts": {

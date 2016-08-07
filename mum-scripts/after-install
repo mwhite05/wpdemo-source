@@ -10,3 +10,21 @@ mv "./wp-config.php" "../wp-config.php"
 
 # Remove the sample configuration file from the web root
 rm "./wp-config-sample.php"
+
+# Fix file and directory ownership / permissions
+chown -R www-data:www-data *
+chown www-data:www-data ../wp-config.php
+
+chmod 0644 ../wp-config.php
+
+find . -type f -exec chmod 0644 {} \+
+find . -type d -exec chmod 0755 {} \+
+
+# Ensure the files uploaded by WordPress are writable but not executable
+find ./wp-content/uploads -type f -exec chmod 0660 {} \+
+
+# Symlink our apache config file to sites-enabled
+ln -s /etc/apache2/sites-available/wpdemo.conf /etc/apache2/sites-enabled/wpdemo.conf
+
+# Restart apache so it knows about our site
+service apache2 restart
