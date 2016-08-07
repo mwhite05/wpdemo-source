@@ -5,7 +5,8 @@
                 "source": "./",
                 "installTo": "./",
                 "excludes": [
-                    "mum-scripts"
+                    "mum-scripts",
+                    "etc"
                 ]
             },
             {
