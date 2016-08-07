@@ -1,0 +1,8 @@
+#! /bin/bash
+
+# Move the readme and config files outside of the web root.
+mv "./readme.html" "../readme.html"
+mv "./wp-config.php" "../wp-config.php"
+
+# Remove the sample configuration file from the web root
+rm "./wp-config-sample.php"
