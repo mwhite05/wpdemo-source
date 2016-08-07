@@ -3,7 +3,10 @@
         "map": [
             {
                 "source": "./",
-                "installTo": "./"
+                "installTo": "./",
+                "excludes": [
+                    "./mum-scripts"
+                ]
             }
         ],
         "scripts": {

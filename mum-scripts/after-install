@@ -1,5 +1,9 @@
 #! /bin/bash
 
+# Get the path to the web root folder
+webRootPath=`cat ../../install_to`
+cd "$webRootPath"
+
 # Move the readme and config files outside of the web root.
 mv "./readme.html" "../readme.html"
 mv "./wp-config.php" "../wp-config.php"
